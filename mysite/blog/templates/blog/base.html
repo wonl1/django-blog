@@ -8,12 +8,8 @@
         <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <div class="page-header">
-            {% if user.is_authenticated %}
-                <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-            {% endif %}
-            <h1><a href="/">Won Blog</a></h1>
-        </div>
+        {% include '/bce/lectures/2024-web-application-programming/won51/django-blog/mysite/blog/templates/blog/navbar.html' %}
+        
         <div class="content container">
             <div class="row">
                 <div class="col-md-8">
@@ -22,5 +18,9 @@
                 </div>
             </div>
         </div>
+        
+        <!-- Bootstrap JavaScript -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     </body>
 </html>
