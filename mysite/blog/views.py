@@ -42,3 +42,5 @@ def post_edit(request, pk):
 def about(request):
     # You can add any necessary logic here
     return render(request, 'about.html')
+
+
