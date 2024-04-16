@@ -1,3 +1,4 @@
+<!-- blog/base.html -->
 {% load static %}
 
 <!DOCTYPE html>
@@ -6,48 +7,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Django Won Blog</title>
-    <!-- Bootstrap 5 CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 </head>
+
 <body>
-    <!-- Include Navbar from a more standard Django templates path -->
     {% include 'blog/navbar.html' %}
 
-    <!-- Show carousel only on the homepage -->
     {% if request.path == '/' %}
         {% include 'blog/carousel.html' %}
     {% endif %}
    
     <div class="content container">
         {% block content %}
-            <!-- Placeholder for the specific content of each page -->
         {% endblock %}
     </div>
     
-    <!-- Footer -->
- 
-    <footer class="text-white mt-3" >
-        <div class="container-fluid py-1", style="background-color: #fdda13ea;">
-            <!-- Add your footer content here -->
-            <div class="row">
-                <div class="col-12 text-center">
-                    <h5 style="font-size: 0.9rem;">연락처 정보</h5>
-                    <div class="underline mb-2"></div>
-                    <p style="font-size: 0.8rem;">
-                        이메일: info@naver.com 전화: (123) 456-7890
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="text-center small py-1" style="background-color: #FFD700;">
-            ©2024 Django Won Blog, All rights reserved
-        </div>
-    </footer>
-
+    {% include 'blog/footer.html' %} 
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
